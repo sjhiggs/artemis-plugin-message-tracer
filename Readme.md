@@ -14,7 +14,7 @@ Plugin to log message ids as a message traverses a cluster of brokers (or a sing
 
 ## Broker B receives the message, sends it to a consumer, receives ACK back from consumer
 ```
-2021-10-04 12:53:05,170 AMQ991001: brokerB exampleQueue: messageId=1,408,breadcrumbId=744931,trackingId=568233: received by broker from /127.0.0.1:33682 (status OK)
+2021-10-04 12:53:05,170 AMQ991001: brokerB: exampleQueue: messageId=1,408,breadcrumbId=744931,trackingId=568233: received by broker from /127.0.0.1:33682 (status OK)
 2021-10-04 12:53:05,172 AMQ991000: brokerB: exampleQueue: messageId=1,408,breadcrumbId=744931,trackingId=568233: sent to consumer at /127.0.0.1:33688
 2021-10-04 12:53:05,177 AMQ991002: brokerB: exampleQueue: messageId=1,408,breadcrumbId=744931,trackingId=568233: ack received from consumer at /127.0.0.1:33688
 ```
