@@ -3,7 +3,7 @@
 
 Plugin to log message ids as a message traverses a cluster of brokers (or a single broker).  Useful to debug where messages become "stuck", "lost", etc.  This plugin only logs the Artemis message id and specified custom identifiers from message properties.  For example, if all messages in the system contain a 'breadcrumbId' that is set by producers, then this plugin can be configured to also log the breadcrumbId.
 
-The intent is to log the minimal amount of information about messages and still be useful for tracking messages.  Thes plugin does not log all message headers, message bodies, etc.
+The intent is to log the minimal amount of information about messages and still be useful for tracking messages.  This plugin does not log all message headers, message bodies, etc.
 
 # Example Mesages
 
