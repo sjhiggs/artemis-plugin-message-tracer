@@ -32,7 +32,23 @@ $ cp target/plugin-message-tracer-1.0.0.jar ${ARTMIS_INSTALL_DIR}/lib/
 
 Finally, the plugin must be configured in the broker XML (see below).
 
-# Logging configuration for separate file
+# Plugin Configuration
+
+## Plugin Properties
+
+* filters - comma delimited Java regex list for addresses that should not be logged.
+* idNames - comma delimited list of custom identifiers that will be logged
+
+## Example configuration
+
+```
+        <broker-plugin class-name="com.redhat.support.MessageAuditForHumans">
+                <property key="filters" value="^activemq.*,^notif.*" />
+                <property key="idNames" value="breadcrumbId,trackingId" />
+        </broker-plugin>
+```        
+
+## Logging configuration for separate file
 ```
 loggers=org.eclipse.jetty,org.jboss.logging,org.apache.activemq.artemis.core.server,org.apache.activemq.artemis.utils,org.apache.activemq.artemis.utils.critical,org.apache.activemq.artemis.journal,org.apache.activemq.artemis.jms.server,org.apache.activemq.artemis.integration.bootstrap,org.apache.activemq.audit.base,org.apache.activemq.audit.message,org.apache.activemq.audit.resource
 
@@ -55,22 +71,6 @@ formatter.MESSAGE_TRACE_PATTERN =org.jboss.logmanager.formatters.PatternFormatte
 formatter.MESSAGE_TRACE_PATTERN.properties=pattern
 formatter.MESSAGE_TRACE_PATTERN.pattern=%d %s%E%n
 ```
-
-# Plugin Configuration
-
-## Plugin Properties
-
-* filters - comma delimited Java regex list for addresses that should not be logged.
-* idNames - comma delimited list of custom identifiers that will be logged
-
-## Example configuration
-
-```
-        <broker-plugin class-name="com.redhat.support.MessageAuditForHumans">
-                <property key="filters" value="^activemq.*,^notif.*" />
-                <property key="idNames" value="breadcrumbId,trackingId" />
-        </broker-plugin>
-```        
 
 # Red Hat Openshift Installation/Example
 
