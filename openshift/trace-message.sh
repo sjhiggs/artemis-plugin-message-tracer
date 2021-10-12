@@ -8,4 +8,4 @@ oc get pods --namespace=myamq --selector=camel.apache.org/integration --template
 oc logs broker-ss-0 > broker0.log
 oc logs broker-ss-1 > broker1.log
 
-grep "AMQ99" ./broker*.log | grep "$1" | cut -d ' '  -f1,6-
+grep "AMQ99" ./broker*.log | grep "$1" | cut -d ' '  -f1,2,6-

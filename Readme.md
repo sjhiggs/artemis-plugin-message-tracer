@@ -104,9 +104,9 @@ Name: broker-ss-1 HostIP: 10.0.94.35   PodIP: 10.131.0.169
 Name: consumer-887466784-gqqhf HostIP: 10.0.91.238   PodIP: 10.130.0.182
 Name: producer-7bb7648c4d-n69cl HostIP: 10.0.91.238   PodIP: 10.130.0.181
 
-./broker0.log:2021-10-12 AMQ991001: amq-broker: example: messageId=380,trackingid=68: received by broker from /10.130.0.181:38500 (status OK)
-./broker0.log:2021-10-12 AMQ991000: amq-broker: example: messageId=524,trackingid=68: sent to cluster at broker-ss-1.broker-hdls-svc.myamq.svc.cluster.local/10.131.0.169:61616 via queue $.artemis.internal.sf.my-cluster.b0ec82c0-2b5f-11ec-bbcc-0a580a8300a9
-./broker1.log:2021-10-12 AMQ991001: amq-broker: example: messageId=403,trackingid=68: received by broker from /10.131.0.168:42036 (status OK)
-./broker1.log:2021-10-12 AMQ991000: amq-broker: example: messageId=403,trackingid=68: sent to consumer at /10.130.0.182:49300
-./broker1.log:2021-10-12 AMQ991002: amq-broker: example: messageId=403,trackingid=68: ack received from consumer at /10.130.0.182:49300
+./broker0.log:2021-10-12 14:37:50,025 AMQ991001: amq-broker: example: messageId=380,trackingid=68: received by broker from /10.130.0.181:38500 (status OK)
+./broker0.log:2021-10-12 14:37:51,019 AMQ991000: amq-broker: example: messageId=524,trackingid=68: sent to cluster at broker-ss-1.broker-hdls-svc.myamq.svc.cluster.local/10.131.0.169:61616 via queue $.artemis.internal.sf.my-cluster.b0ec82c0-2b5f-11ec-bbcc-0a580a8300a9
+./broker1.log:2021-10-12 14:37:51,137 AMQ991001: amq-broker: example: messageId=403,trackingid=68: received by broker from /10.131.0.168:42036 (status OK)
+./broker1.log:2021-10-12 14:37:51,189 AMQ991000: amq-broker: example: messageId=403,trackingid=68: sent to consumer at /10.130.0.182:49300
+./broker1.log:2021-10-12 14:37:51,221 AMQ991002: amq-broker: example: messageId=403,trackingid=68: ack received from consumer at /10.130.0.182:49300
 ```
