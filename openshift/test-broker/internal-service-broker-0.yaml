@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: amqp-svc-broker-0
+  namespace: myamq
+spec:
+  selector:
+    ActiveMQArtemis: broker
+    application: broker-app
+    statefulset.kubernetes.io/pod-name: broker-ss-0
+  ports:
+    - protocol: TCP
+      port: 5672
+      targetPort: 5672

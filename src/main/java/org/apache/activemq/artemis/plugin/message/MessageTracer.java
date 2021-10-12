@@ -24,6 +24,8 @@ import org.apache.activemq.artemis.core.transaction.Transaction;
 /**
  * ActiveMQServerPlugin to trace messages from producers, possibly through a
  * cluster of brokers, and finally to consumers.
+ *
+ * TODO: only supports String property values
  * 
  */
 public class MessageTracer implements ActiveMQServerPlugin, Serializable {
@@ -152,9 +154,6 @@ public class MessageTracer implements ActiveMQServerPlugin, Serializable {
                 filterAddresses.add(Pattern.compile(s));
             }
         }
-
-        filterAddresses.add(Pattern.compile("^activemq.*"));
-        filterAddresses.add(Pattern.compile("^notif.*"));
     }
 
     private String getRoutingStatus(RoutingStatus status) {

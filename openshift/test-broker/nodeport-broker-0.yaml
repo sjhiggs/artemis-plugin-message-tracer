@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    description: The broker's OpenWire port.
+    application: myapplication
+  name: broker-0-amq-nodeport
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+    - nodePort: 30001
+      port: 61616
+      protocol: TCP
+      targetPort: 61616
+  selector:
+    ActiveMQArtemis: broker
+    application: broker-app
+    statefulset.kubernetes.io/pod-name: broker-ss-0
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
