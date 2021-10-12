@@ -5,6 +5,11 @@ Plugin to log message ids as a message traverses a cluster of brokers (or a sing
 
 The intent is to log the minimal amount of information about messages and still be useful for tracking messages.  This plugin does not log all message headers, message bodies, etc.
 
+Helpful Resources:
+* init container example: https://github.com/artemiscloud/artemiscloud-examples/tree/main/operator/init
+* artemis plugins: https://activemq.apache.org/components/artemis/documentation/latest/broker-plugins.html
+* init container instructions: https://access.redhat.com/solutions/5897061
+
 # Example Mesages
 
 ## Broker A receives a message and sends the message to broker B via a store and forward queue
