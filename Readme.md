@@ -7,7 +7,6 @@ The intent is to log the minimal amount of information about messages and still 
 
 # Example Mesages
 
-
 ## Broker A receives a message and sends the message to broker B via a store and forward queue
 ```
 2021-10-04 12:53:05,158 AMQ991001: brokerA: exampleQueue: messageId=1075,breadcrumbId=744931,trackingId=568233: received by broker from /127.0.0.1:45708 (status OK)
@@ -20,6 +19,18 @@ The intent is to log the minimal amount of information about messages and still 
 2021-10-04 12:53:05,172 AMQ991000: brokerB: exampleQueue: messageId=1408,breadcrumbId=744931,trackingId=568233: sent to consumer at /127.0.0.1:33688
 2021-10-04 12:53:05,177 AMQ991002: brokerB: exampleQueue: messageId=1408,breadcrumbId=744931,trackingId=568233: ack received from consumer at /127.0.0.1:33688
 ```
+# Installation
+The plugin must be compiled
+```
+$ mvn clean install
+```
+
+And then copied to the broker installation directory's lib dir:
+```
+$ cp target/plugin-message-tracer-1.0.0.jar ${ARTMIS_INSTALL_DIR}/lib/
+```
+
+Finally, the plugin must be configured in the broker XML (see below).
 
 # Logging configuration for separate file
 ```
