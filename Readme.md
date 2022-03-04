@@ -47,7 +47,7 @@ Finally, the plugin must be configured in the broker XML (see below).
 ## Example configuration
 
 ```
-        <broker-plugin class-name="com.redhat.support.MessageAuditForHumans">
+        <broker-plugin class-name="org.apache.activemq.artemis.plugin.message.MessageTracer">
                 <property key="filters" value="^activemq.*,^notif.*" />
                 <property key="idNames" value="breadcrumbId,trackingId" />
         </broker-plugin>
