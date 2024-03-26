@@ -52,7 +52,7 @@ public class MessageTracer implements ActiveMQServerPlugin, Serializable {
 
         MessageTracerLogger.LOGGER.expire(brokerName, getDestinationName(reference.getMessage()),
                 String.valueOf(reference.getMessageID()), getCustomIdsMessage(reference.getMessage()),
-                "expired" + reference.get);
+                "message expired");
     }
 
     @Override
