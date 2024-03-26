@@ -52,5 +52,10 @@ public interface MessageTracerLogger extends BasicLogger {
    @LogMessage(level = Logger.Level.INFO)
    @Message(id = 991002, value = "{0}: {1}: messageId={2},{3}: {4}", format = Message.Format.MESSAGE_FORMAT)
    void afterAck(String brokerName, String destination, String messageId, String customIdMsg, String msg);
+
+   @LogMessage(level = Logger.Level.INFO)
+   @Message(id = 991003, value = "{0}: {1}: messageId={2},{3}: {4}", format = Message.Format.MESSAGE_FORMAT)
+   void expire(String brokerName, String destination, String messageId, String customIdMsg, String msg);
+
 }
 

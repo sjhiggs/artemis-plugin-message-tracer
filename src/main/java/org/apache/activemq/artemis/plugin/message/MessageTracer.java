@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 import org.apache.activemq.artemis.api.core.ActiveMQException;
 import org.apache.activemq.artemis.api.core.Message;
+import org.apache.activemq.artemis.api.core.SimpleString;
 import org.apache.activemq.artemis.core.config.Configuration;
 import org.apache.activemq.artemis.core.postoffice.RoutingStatus;
 import org.apache.activemq.artemis.core.server.ActiveMQServer;
@@ -41,6 +42,17 @@ public class MessageTracer implements ActiveMQServerPlugin, Serializable {
         createIdList(properties.get("idNames"));
         createFilters(properties.get("filters"));
 
+    }
+
+    @Override
+    public void messageExpired(MessageReference reference, SimpleString messageExpiryAddress, ServerConsumer consumer) throws ActiveMQException {
+        if (filter(reference.getMessage())) {
+            return;
+        }
+
+        MessageTracerLogger.LOGGER.expire(brokerName, getDestinationName(reference.getMessage()),
+                String.valueOf(reference.getMessageID()), getCustomIdsMessage(reference.getMessage()),
+                "expired" + reference.get);
     }
 
     @Override
